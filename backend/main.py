@@ -7,7 +7,7 @@ app = FastAPI()
 # Allow requests from your React app
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, set this to your frontend domain
+    allow_origins=["https://agency-website-frontend-v2.onrender.com"],  # In production, set this to your frontend domain
     allow_methods=["*"],
     allow_headers=["*"],
 )
