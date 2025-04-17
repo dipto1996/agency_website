@@ -1,26 +1,18 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-const HeroSection = () => {
+const HeroSection = ({ openModal }) => {
   return (
-    <div className="h-screen bg-gray-50 flex items-center justify-center text-center px-4" id="hero">
-      <div className="max-w-3xl">
-        <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
-          We Help You Build Modern <span className="text-indigo-600">AI-Driven</span> Solutions
-        </h1>
-        <p className="mt-6 text-lg text-gray-600">
-          Empower your business with cutting-edge technology, crafted by a team of experts.
-        </p>
-        <div className="mt-8 space-x-4">
-          <Link to="services" smooth duration={500} className="inline-block bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-500 cursor-pointer">
-            Explore Services
-          </Link>
-          <Link to="about" smooth duration={500} className="inline-block bg-gray-200 text-gray-700 px-6 py-3 rounded hover:bg-gray-300 cursor-pointer">
-            Learn More
-          </Link>
+    <section id="hero" className="h-screen bg-gray-100 flex items-center justify-center text-center px-4">
+      <div>
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Building AI-powered web experiences</h1>
+        <p className="text-lg md:text-xl text-gray-700 mb-8">We craft sleek, performant, and modern websites to elevate your brand.</p>
+        <div className="space-x-4">
+          <Link to="services" smooth duration={500} className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-500 cursor-pointer">Our Services</Link>
+          <button onClick={openModal} className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50">Book a Call</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
