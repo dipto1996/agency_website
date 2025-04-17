@@ -5,7 +5,6 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import ContactModal from './components/ContactModal';
-import Footer from './components/Footer';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,15 +13,12 @@ function App() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="App font-sans">
+    <div className="App">
       <Navbar openModal={openModal} />
-      <main className="pt-20 space-y-32">
-        <section id="hero"><HeroSection /></section>
-        <section id="about"><AboutSection /></section>
-        <section id="services"><ServicesSection /></section>
-      </main>
-      <Footer />
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
+      <HeroSection openModal={openModal} />
+      <AboutSection />
+      <ServicesSection />
+      {isModalOpen && <ContactModal closeModal={closeModal} />}
     </div>
   );
 }
