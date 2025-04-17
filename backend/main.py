@@ -4,10 +4,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow requests from your React app
+# CORS settings - allow all for now (you can restrict later)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://agency-website-frontend-v2.onrender.com"],  # In production, set this to your frontend domain
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -19,6 +19,5 @@ class ContactForm(BaseModel):
 
 @app.post("/contact")
 def contact(form: ContactForm):
-    # You can save this to a database or trigger email notifications later
     print("Received contact form:", form)
     return {"message": f"Thank you, {form.name}. We’ll be in touch!"}
