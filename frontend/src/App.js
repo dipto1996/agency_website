@@ -8,7 +8,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("https://agency-website-backend-tru6.onrender.com", {
+    const res = await fetch("https://agency-website-backend-tru6.onrender.com/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
